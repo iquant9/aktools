@@ -10,8 +10,8 @@ permissions:
   packages: write
 jobs:
   docker:
-    environment: main
     runs-on: ubuntu-latest
+    environment: main
     permissions:
       contents: read
       packages: write
@@ -29,8 +29,8 @@ jobs:
       - id: build-push-image
         uses: iquant9/deploy-action@main
         with:
-          registry_username: ${{env.DOCKERHUB_USERNAME}}
-          registry_password: ${{env.DOCKERHUB_TOKEN}}
+          registry_username: ${{DOCKERHUB_USERNAME}}
+          registry_password: ${{DOCKERHUB_TOKEN}}
           tag: aktools:${{ steps.image_tag.outputs.new_image_tag }}
           file: ./Dockerfile
       - run: echo new image is ${{ steps.build-push-image.outputs.new-image }}
