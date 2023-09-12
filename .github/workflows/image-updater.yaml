@@ -13,6 +13,7 @@ permissions:
   packages: write
 jobs:
   docker:
+    environment: main
     runs-on: ubuntu-latest
     permissions:
       contents: read
