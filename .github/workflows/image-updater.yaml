@@ -30,8 +30,8 @@ jobs:
         uses: iquant9/deploy-action@main
         with:
           registry_username: ${{ vars.DOCKERHUB_USERNAME }}
-          registry_password: ${{secrets.DOCKERHUB_TOKEN}}
-          tag: aktools:${{ steps.image_tag.outputs.new_image_tag }}
+          registry_password: ${{ secrets.DOCKERHUB_TOKEN }}
+          tag: ${{ vars.DOCKERHUB_USERNAME }}/aktools:${{ steps.image_tag.outputs.new_image_tag }}
           file: ./Dockerfile
       - run: echo new image is ${{ steps.build-push-image.outputs.new-image }}
         shell: bash
