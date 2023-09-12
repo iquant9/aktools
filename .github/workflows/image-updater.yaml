@@ -29,7 +29,7 @@ jobs:
       - id: build-push-image
         uses: iquant9/deploy-action@main
         with:
-          registry_username: ${{secrets.DOCKERHUB_USERNAME}}
+          registry_username: ${{ vars.DOCKERHUB_USERNAME }}
           registry_password: ${{secrets.DOCKERHUB_TOKEN}}
           tag: aktools:${{ steps.image_tag.outputs.new_image_tag }}
           file: ./Dockerfile
