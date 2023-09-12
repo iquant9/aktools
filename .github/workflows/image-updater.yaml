@@ -11,7 +11,7 @@ permissions:
 jobs:
   docker:
     runs-on: ubuntu-latest
-#    environment: main
+    environment: main
     permissions:
       contents: read
       packages: write
@@ -35,10 +35,10 @@ jobs:
           file: ./Dockerfile
       - run: echo new image is ${{ steps.build-push-image.outputs.new-image }}
         shell: bash
-      - name: Invoke workflow in another repo with inputs
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: trigger-set-image.yml
-          repo: iquant9/deploy
-          inputs: '{ "chart": "${{ github.event.repository.name }}", "image": "${{ secrets.USERNAME }}/${{ github.event.repository.name }}", "sha-tag": "${{ steps.image_tag.outputs.new_image_tag }}" }'
-          token: ${{ secrets.WORKFLOW_ACCESS_ALL_MY_REPO }}
+#      - name: Invoke workflow in another repo with inputs
+#        uses: benc-uk/workflow-dispatch@v1
+#        with:
+#          workflow: trigger-set-image.yml
+#          repo: iquant9/deploy
+#          inputs: '{ "chart": "${{ github.event.repository.name }}", "image": "${{ secrets.USERNAME }}/${{ github.event.repository.name }}", "sha-tag": "${{ steps.image_tag.outputs.new_image_tag }}" }'
+#          token: ${{ secrets.WORKFLOW_ACCESS_ALL_MY_REPO }}
