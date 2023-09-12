@@ -33,6 +33,7 @@ jobs:
           registry_password: ${{ secrets.DOCKERHUB_TOKEN }}
           tag: ${{ vars.DOCKERHUB_USERNAME }}/aktools:${{ steps.image_tag.outputs.new_image_tag }}
           file: ./Dockerfile
+          platforms: linux/amd64
       - run: echo new image is ${{ steps.build-push-image.outputs.new-image }}
         shell: bash
 #      - name: Invoke workflow in another repo with inputs
