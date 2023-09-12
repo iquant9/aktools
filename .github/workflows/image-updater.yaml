@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  DOCKERHUB_USERNAME: aiquant9
+
 
 # fix error:installation not allowed to Create organization package
 permissions:
@@ -31,8 +31,8 @@ jobs:
       - id: build-push-image
         uses: iquant9/deploy-action@main
         with:
-          registry_username: jei888
-          registry_password: ${{secrets.DOCKERHUB_TOKEN}}
+          registry_username: ${{env.DOCKERHUB_USERNAME}}
+          registry_password: ${{env.DOCKERHUB_TOKEN}}
           tag: aktools:${{ steps.image_tag.outputs.new_image_tag }}
           file: ./Dockerfile
       - run: echo new image is ${{ steps.build-push-image.outputs.new-image }}
