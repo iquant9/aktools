@@ -3,3 +3,4 @@ pandas==1.5.3
 pyfolio==0.9.2
 Requests==2.31.0
 sanic==23.3.0
+akshare==1.10.30
