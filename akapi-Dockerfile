@@ -28,4 +28,4 @@ RUN pip install -r requirements.txt
 # 作用1.帮助镜像使用者理解这个镜像服务的守护端口，以方便配置映射；
 # 作用2.则是在运行时使用随机端口映射时，也就是 docker run -P 时，会自动随机映射 EXPOSE 的端口。
 EXPOSE 80
-ENTRYPOINT ["python", "./server.py"]
+ENTRYPOINT ["python", "./akapi.py"]
