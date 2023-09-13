@@ -33,7 +33,7 @@ jobs:
           registry_username: ${{ vars.DOCKERHUB_USERNAME }}
           registry_password: ${{ secrets.DOCKERHUB_TOKEN }}
           tag: ${{ vars.DOCKERHUB_USERNAME }}/${{ env.DOCKER_REPO }}:${{ steps.image_tag.outputs.new_image_tag }},${{ vars.DOCKERHUB_USERNAME }}/${{ env.DOCKER_REPO }}:latest
-          file: ./$DOCKER_REPO-Dockerfile
+          file: ./${{ env.DOCKER_REPO }}-Dockerfile
           platforms: linux/amd64,linux/x86_64
       - run: echo new image is ${{ steps.build-push-image.outputs.new-image }}
         shell: bash
