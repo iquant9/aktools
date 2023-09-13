@@ -8,5 +8,6 @@ docker network ls
 
 ### run akapi
 ```shell
+docker pull jei888/akapi:latest --platform linux/amd64
 docker run --platform linux/amd64  --net ak --ip 172.21.0.1 -p 8055:80 jei888/akapi:latest 
 ```
