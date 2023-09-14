@@ -2,7 +2,7 @@ from sanic import Sanic, json, SanicException, text
 from sanic.log import logger
 
 import akshare
-import qstock
+
 app = Sanic(name='quant-api')
 
 date_format = '%Y-%m-%d %H:%M:%S'
