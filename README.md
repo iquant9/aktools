@@ -9,5 +9,8 @@ docker network ls
 ### run akapi
 ```shell
 docker pull jei888/akapi:latest --platform linux/amd64
-docker run --platform linux/amd64  --net ak --ip 172.21.0.1 -p 8055:80 jei888/akapi:latest 
+docker run --platform linux/amd64  --net ak --ip 172.21.0.2 -p 8055:80 jei888/akapi:latest 
+# verify
+curl '127.0.0.1:8055/rest?cmd=akshare.stock_zh_a_spot_em()'
+curl '172.21.0.2/rest?cmd=akshare.stock_zh_a_spot_em()'
 ```
