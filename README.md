@@ -14,3 +14,11 @@ docker run --platform linux/amd64  --net ak --ip 172.21.0.2 -p 8055:80 jei888/ak
 curl '127.0.0.1:8055/rest?cmd=akshare.stock_zh_a_spot_em()'
 curl '172.21.0.2/rest?cmd=akshare.stock_zh_a_spot_em()'
 ```
+
+### run aktools
+```shell
+docker pull jei888/aktools:latest --platform linux/amd64
+docker run -p 8066:80 jei888/aktools:latest 
+# 或者一步到位
+docker run --platform linux/amd64 -p 8066:80 jei888/aktools:latest 
+```
