@@ -19,6 +19,6 @@ curl '172.21.0.2/rest?cmd=akshare.stock_zh_a_spot_em()'
 ```shell
 docker pull jei888/aktools:latest --platform linux/amd64
 docker run -p 8066:80 jei888/aktools:latest 
-# 或者一步到位
+# another cmd
 docker run --platform linux/amd64 -p 8066:80 jei888/aktools:latest 
 ```
